@@ -3,8 +3,16 @@
 
 ### 2. Request an ISAAC account 
 
-1.1. go to [https://oit.utk.edu/hpsc/](https://oit.utk.edu/hpsc/)
+2.1. go to [https://oit.utk.edu/hpsc/](https://oit.utk.edu/hpsc/)
 
-1.2. click on `Request an ISAAC Account` from the menu on the left and follow the link from there.
+2.2. click on `Request an ISAAC Account` from the menu on the left and follow the link from there.
 
-## In-class Tutorial
+## 3. In-class Tutorial
+3.1 File editing nano vs Vim
+  3.2
+3.2 Slurm introduction
+	3.2.1 Debugging option 
+	3.2.2 Interactive job
+  3.2.2 Batch job
+
+
