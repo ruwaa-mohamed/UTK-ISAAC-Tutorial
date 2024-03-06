@@ -9,16 +9,12 @@
 
 ## 3. In-class Tutorial
 
-3.1 File editing nano vs Vim
+### 3.1 File editing nano vs Vim
 
-  3.2
+### 3.2 Slurm introduction
 
-3.2 Slurm introduction
-
- 		3.2.1 Debugging option 
+   ##### 3.2.1 Debugging option 
 	
- 	3.2.2 Interactive job
+  #### 3.2.2 Interactive job
   
-  	3.2.2 Batch job
-
-
+  #### 3.2.2 Batch job
