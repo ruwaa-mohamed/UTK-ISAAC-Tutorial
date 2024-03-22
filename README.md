@@ -26,6 +26,9 @@ itself, and troubleshooting tips.
 ### 3.1 File editing nano vs Vim
 #### Useful Nano Keyboard Commands
 https://staffwww.fullcoll.edu/sedwards/Nano/UsefulNanoKeyCommands.html
+#### Useful Vim tutorial
+https://www.openvim.com/
+
 ### 3.2 Slurm introduction
 
    ##### 3.2.1 Debugging option 
