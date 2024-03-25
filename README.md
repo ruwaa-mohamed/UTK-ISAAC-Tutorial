@@ -23,6 +23,50 @@ itself, and troubleshooting tips.
 
 ## 3. In-class Tutorial
 
+### 3.x Logging into ISSAC-NG
+
+#### Open OnDemand
+Go to [login.isaac.utk.edu](login.isaac.utk.edu) 
+
+Log in with your credentials.
+On the top bar click on the "Clusters" dropdown and click on >_ISAAC Shell Access
+
+#### SSH through a terminal
+Open a terminal and execute the following command
+```
+ssh <your-NetID>@login.isaac.tennessee.edu 
+```
+
+### 3.x Navigating the shell environment
+#### Useful commands
+| Command | Description |
+| --- | --- |
+| `pwd` | print current working directory |
+| `ls` | list files in the current working directory |
+| `ll` | list files in more detail |
+| `cd` | change the working directory |
+| `mkdir <name>` | make a new directory <name> |
+| `cp <source> <target>` | create a copy of file <source> named <target> |
+| `mv <source> <directory>` | move <source> (file or directory) into <directory> |
+| `mv <source> <target>` | rename <source> (file or directory) to <target> |
+| `rm -i <filename>` | remove (delete) file named <file> |
+
+#### Excercise
+Navigate to your scratch space located in 
+```
+/lustre/isaac/scratch/<your_username>
+```
+and create a new directory where you'll store what we do here today. 
+Try renaming it, deleting it and recreating it.
+Remember that anything you delete here is gone forever!
+
+#### Checking the available tools
+| Command | Description |
+| --- | --- |
+| `module avail` | check what tools are available |
+| `module load <tool>` | load the tool you need |
+| `module unload <tool>` | unload a tool you no longer need |
+
 ### 3.1 File editing nano vs Vim
 #### Useful Nano Keyboard Commands
 https://staffwww.fullcoll.edu/sedwards/Nano/UsefulNanoKeyCommands.html
