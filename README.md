@@ -219,6 +219,20 @@ https://staffwww.fullcoll.edu/sedwards/Nano/UsefulNanoKeyCommands.html
 https://www.openvim.com/
 
 ### 3.6 Slurm introduction
+Slurm is an open-source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.
+
+#### Slurm commands
+| Command | Description |
+| --- | --- |
+| `pwd` | print current working directory |
+| `ls` | list files in the current working directory |
+| `ll` | list files in more detail |
+| `cd` | change the working directory |
+| `mkdir <name>` | make a new directory <name> |
+| `cp <source> <target>` | create a copy of file <source> named <target> |
+| `mv <source> <directory>` | move <source> (file or directory) into <directory> |
+| `mv <source> <target>` | rename <source> (file or directory) to <target> |
+| `rm -i <filename>` | remove (delete) file named <file> |
 
    ##### 3.2.1 Debugging option 
 	
