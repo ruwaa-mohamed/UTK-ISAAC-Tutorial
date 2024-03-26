@@ -147,7 +147,7 @@ Be sure to always denote folders with a forward slash `/` even though your local
 
 So, if we want to transfer a local file called "file.txt" onto ISAAC:
 ```
-scp C:/Users/<Local-Account>/Documents/file.txt <ISAAC-username>@login.isaac.utk.edu:nfs/home/<ISAAC-username>/file.txt
+scp C:/Users/<Local-Account>/Documents/file.txt <ISAAC-username>@login.isaac.utk.edu:/lustre/isaac/scratch/<ISAAC_username>/file.txt
 ```
 You need to do this from a linux terminal while *not* logged into the server. If you are already on ISAAC, the `scp` command will not be able to use the local path. You can run multiple Linux terminals at once to allow transfering local files while being logged into ISAAC on another terminal.
 
@@ -155,13 +155,13 @@ Additionally, this will prompt you for your password, since `scp` needs to log i
 
 You can reverse the synax if you want to copy a file from ISAAC onto your local device:
 ```
-scp <ISAAC-username>@login.isaac.utk.edu:nfs/home/tchaffi2/file.txt C:/Users/<Local-Account>/Documents/file.txt
+scp <ISAAC-username>@login.isaac.utk.edu:/lustre/isaac/scratch/<ISAAC_username>/file.txt C:/Users/<Local-Account>/Documents/file.txt
 ```
 Again, this will require a terminal session that is *not* logged into the server, and you will have to enter your password.
 
 You can also copy an entire folder using the `-r` flag (recursive):
 ```
-scp -r C:/Users/<Local-Account>/Documents/Folder <ISAAC-username>@login.isaac.utk.edu:nfs/home/<ISAAC-username>/Folder
+scp -r C:/Users/<Local-Account>/Documents/Folder <ISAAC-username>@login.isaac.utk.edu:/lustre/isaac/scratch/<ISAAC_username>
 ```
 
 #### Local file transfer in Open OnDemand
