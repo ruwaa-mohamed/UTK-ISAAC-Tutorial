@@ -210,6 +210,8 @@ git clone https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial.git
 ```
 This will create a directory for the repository called "UTK-ISAAC-Tutorial" within our current working directory.
 
+(I will add a link here to GitHub basics in case anyone wants to learn more.)
+
 ### 3.5 File editing nano vs Vim
 #### Useful Nano Keyboard Commands
 https://staffwww.fullcoll.edu/sedwards/Nano/UsefulNanoKeyCommands.html
