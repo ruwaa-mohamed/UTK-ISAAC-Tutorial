@@ -190,6 +190,7 @@ So if we want to download the README file from the Github repository for this tu
 ```
 wget -P ./GST -O ISAAC_README.md https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/README.md 
 ```
+(Once I Ruwaa's files are uploaded I will change this to download those files instead of the README file)
 
 #### Github repositories (git clone)
 
