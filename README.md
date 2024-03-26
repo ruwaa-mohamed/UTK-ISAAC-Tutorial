@@ -147,20 +147,21 @@ Be sure to always denote folders with a forward slash `/` even though your local
 
 So, if we want to transfer a local file called "file.txt" onto ISAAC:
 ```
-scp C:/Users/Timothy/Documents/file.txt tchaffi2@login.isaac.utk.edu:nfs/home/tchaffi2/file.txt
+scp C:/Users/<Local-Account>/Documents/file.txt <ISAAC-username>@login.isaac.utk.edu:nfs/home/<ISAAC-username>/file.txt
 ```
 You need to do this from a linux terminal while *not* logged into the server. If you are already on ISAAC, the `scp` command will not be able to use the local path. You can run multiple Linux terminals at once to allow transfering local files while being logged into ISAAC on another terminal.
+
 Additionally, this will prompt you for your password, since `scp` needs to log into ISAAC to copy the file. 
 
 You can reverse the synax if you want to copy a file from ISAAC onto your local device:
 ```
-scp tchaffi2@login.isaac.utk.edu:nfs/home/tchaffi2/file.txt C:/Users/Timothy/Documents/file.txt
+scp <ISAAC-username>@login.isaac.utk.edu:nfs/home/tchaffi2/file.txt C:/Users/<Local-Account>/Documents/file.txt
 ```
 Again, this will require a terminal session that is *not* logged into the server, and you will have to enter your password.
 
 You can also copy an entire folder using the `-r` flag (recursive):
 ```
-scp -r C:/Users/Timothy/Documents/Folder tchaffi2@login.isaac.utk.edu:nfs/home/tchaffi2/Folder
+scp -r C:/Users/<Local-Account>/Documents/Folder <ISAAC-username>@login.isaac.utk.edu:nfs/home/<ISAAC-username>/Folder
 ```
 
 #### Local file transfer in Open OnDemand
@@ -168,6 +169,7 @@ scp -r C:/Users/Timothy/Documents/Folder tchaffi2@login.isaac.utk.edu:nfs/home/t
 If you are using ISAAC's OnDemand service, scp won't work because the virtual terminal is automatically logged into ISAAC and cannot access your local file system. Fortunately, there is an even easier way to upload local files to the server.
  
 OnDemand has standard file management similar to a regular Windows or MacOS system. You can upload files using the "Upload" button in the top right, then drag or browse for files from your local computer.
+
 Other programs such as MobaXTerm for Windows also have visual file managers that allow uploading and downloading local files without using scp. 
 
 #### Internet files (wget)
