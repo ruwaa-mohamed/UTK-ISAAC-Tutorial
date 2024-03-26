@@ -78,5 +78,8 @@ https://www.openvim.com/
    ##### 3.2.1 Debugging option 
 	
   #### 3.2.2 Interactive job
-  
+  In this interactive job, we will do some text manipulation. there are 4 FASTQ files available to use. Let's explore the files first.
+  ```bash
+  ```
+  Now, let's convert this FASTQ to FASTA
   #### 3.2.2 Batch job
