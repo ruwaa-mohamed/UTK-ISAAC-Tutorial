@@ -26,7 +26,7 @@ itself, and troubleshooting tips.
 ### 3.x Logging into ISSAC-NG
 
 #### Open OnDemand
-Go to [login.isaac.utk.edu](login.isaac.utk.edu) 
+Go to [login.isaac.utk.edu](https://login.isaac.utk.edu) 
 
 Log in with your credentials.
 On the top bar click on the "Clusters" dropdown and click on >_ISAAC Shell Access
