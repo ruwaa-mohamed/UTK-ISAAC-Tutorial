@@ -231,4 +231,4 @@ https://developer.nvidia.com/blog/taking-gpu-based-ngs-data-analysis-to-another-
 
 
 
-https://docs.nvidia.com/clara/parabricks/4.1.0/index.html
+https://docs.nvidia.com/clara/parabricks/4.3.0/index.html
