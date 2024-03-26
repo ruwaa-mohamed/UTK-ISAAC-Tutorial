@@ -227,18 +227,38 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 <img width="548" alt="Screen Shot 2024-03-26 at 12 51 01 PM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/909f844f-f08e-4bd5-8fe3-3c8314007b09">
 </p>
 
-#### Slurm commands
+### Slurm commands
 | Command | Description |
 | --- | --- |
 | `sbatch <Job File Name>` | Batch job submission |
-| `salloc | srun –pty /bin/bash` | Interactive job submission |
+| `salloc` | Interactive job submission |
 | `squeue -l` | Job list |
 | `squeue -l -u <User Name>` | Job list by users |
 | `scancel <Job ID>` | Job deletion |
 | `scontrol update job <Job ID>` | Job update |
 | `scontrol show job <Job ID>` | Job details |
-| `rm -i <filename>` | remove (delete) file named <file> |
 
+#### Interactive job
+` salloc --nodes=1 --ntasks=1 --time=01:00:00 --partition=campus `
+#### Non-interactive batch mode
+```
+#!/bin/bash
+ #This file is a submission script to request the ISAAC resources from Slurm 
+ #SBATCH -J job			       #The name of the job
+ #SBATCH -A ACF-UTK0011              # The project account to be charged
+ #SBATCH --nodes=1                     # Number of nodes
+ #SBATCH --ntasks-per-node=48          # cpus per node 
+ #SBATCH --partition=campus            # If not specified then default is "campus"
+ #SBATCH --time=0-01:00:00             # Wall time (days-hh:mm:ss)
+ #SBATCH --error=job.e%J	       # The file where run time errors will be dumped
+ #SBATCH --output=job.o%J	       # The file where the output of the terminal will be dumped
+ #SBATCH --qos=campus
+
+ # Now list your executable command/commands.
+ # Example for code compiled with a software module:
+ module load example/test
+
+```
    ##### 3.2.1 Debugging option 
 	
   #### 3.2.2 Interactive job
