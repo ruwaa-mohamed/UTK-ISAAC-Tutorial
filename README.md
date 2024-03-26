@@ -226,3 +226,4 @@ https://www.openvim.com/
   ```bash
   ```
   Now, let's convert this FASTQ to FASTA
+https://developer.nvidia.com/blog/taking-gpu-based-ngs-data-analysis-to-another-level-with-clara-parabricks-pipelines-3-0/
