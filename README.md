@@ -219,19 +219,24 @@ https://staffwww.fullcoll.edu/sedwards/Nano/UsefulNanoKeyCommands.html
 https://www.openvim.com/
 
 ### 3.6 Slurm introduction
-Slurm is an open-source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.
+Slurm is an open-source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. 
+`slurmctld`, to monitor resources and work. Each compute server (node) `slurmd daemon` [fault-tolerant hierarchical communications]; can be compared to a remote shell: it waits for work, executes that work, returns status, and waits for more work `slurmdbd` (Slurm DataBase Daemon) which can be used to record accounting information for multiple Slurm-managed clusters in a single database.
+
+
+<p align="center">
+<img width="548" alt="Screen Shot 2024-03-26 at 12 51 01 PM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/909f844f-f08e-4bd5-8fe3-3c8314007b09">
+</p>
 
 #### Slurm commands
 | Command | Description |
 | --- | --- |
-| `pwd` | print current working directory |
-| `ls` | list files in the current working directory |
-| `ll` | list files in more detail |
-| `cd` | change the working directory |
-| `mkdir <name>` | make a new directory <name> |
-| `cp <source> <target>` | create a copy of file <source> named <target> |
-| `mv <source> <directory>` | move <source> (file or directory) into <directory> |
-| `mv <source> <target>` | rename <source> (file or directory) to <target> |
+| `sbatch <Job File Name>` | Batch job submission |
+| `salloc | srun –pty /bin/bash` | Interactive job submission |
+| `squeue -l` | Job list |
+| `squeue -l -u <User Name>` | Job list by users |
+| `scancel <Job ID>` | Job deletion |
+| `scontrol update job <Job ID>` | Job update |
+| `scontrol show job <Job ID>` | Job details |
 | `rm -i <filename>` | remove (delete) file named <file> |
 
    ##### 3.2.1 Debugging option 
