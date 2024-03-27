@@ -244,21 +244,29 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 ```
 #!/bin/bash
  #This file is a submission script to request the ISAAC resources from Slurm 
- #SBATCH -J job			       #The name of the job
- #SBATCH -A ACF-UTK0011              # The project account to be charged
- #SBATCH --nodes=1                     # Number of nodes
- #SBATCH --ntasks-per-node=48          # cpus per node 
- #SBATCH --partition=campus            # If not specified then default is "campus"
- #SBATCH --time=0-01:00:00             # Wall time (days-hh:mm:ss)
- #SBATCH --error=job.e%J	       # The file where run time errors will be dumped
- #SBATCH --output=job.o%J	       # The file where the output of the terminal will be dumped
- #SBATCH --qos=campus
+ #SBATCH -J jobname		          # The name of the job
+ #SBATCH -account (or -A) ACF-UTK0011     # The project account to be charged
+ #SBATCH --time (or -t)=hh:mm:ss        # Wall time (days-hh:mm:ss)
+ #SBATCH --nodes (or -N)=1                # Number of nodes
+ #SBATCH --ntasks (or -n)= 48.            # Total number of cores requested
+ #SBATCH --ntasks-per-node=48             # cpus per node 
+ #SBATCH --partition(or -p)=campus        # If not specified then default is "campus"
+ #SBATCH --qos=campus		          # quality of Service (QOS)
+ #SBATCH --chdir=directory                # Used to change the working directory. The default working directory is the one from where a job is submitted
+ #SBATCH --error=jobname.e%J	          # The file where run time errors will be dumped
+ #SBATCH --output=jobname.o%J	          # The file where the output of the terminal will be dumped
+ #SBATCH -array (or --a)= n              # submits an array job with n identical tasks 
+ #SBATCH --mail (or -M)                   # send a mail notification  
 
  # Now list your executable command/commands.
  # Example for code compiled with a software module:
  module load example/test
 
 ```
+<p align="center">
+<img width="891" alt="Screen Shot 2024-03-27 at 11 25 54 AM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/e4d330ef-a0f6-41be-acb1-e2088017a4ea">
+</p>
+
    ##### 3.2.1 Debugging option 
 	
   #### 3.2.2 Interactive job
