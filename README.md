@@ -238,6 +238,11 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 | `scontrol update job <Job ID>` | Job update |
 | `scontrol show job <Job ID>` | Job details |
 
+#### Altering batch job
+**Only until the job starts running**
+
+`scontrol update JobID=jobid NumTasks=Total_tasks JobName=any_new_name TimeLimit=day-hh:mm:ss`
+
 #### Interactive job
 ` salloc --nodes=1 --ntasks=1 --time=01:00:00 --partition=campus `
 #### Non-interactive batch mode
