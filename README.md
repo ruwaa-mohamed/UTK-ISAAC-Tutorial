@@ -260,7 +260,6 @@ git clone https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial.git
 This will create a directory for the repository called "UTK-ISAAC-Tutorial" within our current working directory.
 
 If you want to learn more about using GitHub, you can check out this tutorial on [GitHub Basics](https://docs.github.com/en/get-started/start-your-journey/hello-world).
-
 ### 3.5 File editing nano vs Vim
 #### Useful Nano Keyboard Commands
 https://staffwww.fullcoll.edu/sedwards/Nano/UsefulNanoKeyCommands.html
@@ -281,6 +280,7 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 | --- | --- |
 | `sbatch <Job File Name>` | Batch job submission |
 | `salloc` | Interactive job submission |
+| `srun` | Run a parallel job |
 | `squeue -l` | Job list |
 | `squeue -l -u <User Name>` | Job list by users |
 | `scancel <Job ID>` | Job deletion |
@@ -288,19 +288,43 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 | `scontrol show job <Job ID>` | Job details |
 
 #### Altering batch job
-**Only until the job starts running**
+**It will only alter until the job starts running**
 
 `scontrol update JobID=jobid NumTasks=Total_tasks JobName=any_new_name TimeLimit=day-hh:mm:ss`
 
 #### Interactive job
-` salloc --nodes=1 --ntasks=1 --time=01:00:00 --partition=campus `
-#### Non-interactive batch mode
+
+
+`salloc --nodes=1 --ntasks=1 --time=01:00:00 --partition=campus`
+#### Non-interactive job
+
+##### Non-batch 
+You will have to wait for the allocation of resources
+`srun -A <account> -N  <# nodes> -n <# cores> -t <time> -p <partition> -q <quality of service> 'script'`
+
+`srun -A ACF-UTK0011 -N 1 -n 1 -t 00:00:30 -p campus -q campus 'hostname'`
+```
+srun: job 1383775 queued and waiting for resources
+srun: job 1383775 has been allocated resources
+clr0821
+```
+`srun -A ACF-UTK0032 -N 1 -n 1 -t 00:00:30 -p condo-ut-genomics -q genomics 'hostname'`
+
+```
+srun: job 1384918 queued and waiting for resources
+srun: job 1384918 has been allocated resources
+ilm0837
+```
+
+##### Batch
+
+An example of the batch job file should look like.
 ```
 #!/bin/bash
  #This file is a submission script to request the ISAAC resources from Slurm 
  #SBATCH -J jobname		          # The name of the job
  #SBATCH -account (or -A) ACF-UTK0011     # The project account to be charged
- #SBATCH --time (or -t)=hh:mm:ss        # Wall time (days-hh:mm:ss)
+ #SBATCH --time (or -t)=hh:mm:ss          # Wall time (days-hh:mm:ss)
  #SBATCH --nodes (or -N)=1                # Number of nodes
  #SBATCH --ntasks (or -n)= 48.            # Total number of cores requested
  #SBATCH --ntasks-per-node=48             # cpus per node 
@@ -309,7 +333,7 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
  #SBATCH --chdir=directory                # Used to change the working directory. The default working directory is the one from where a job is submitted
  #SBATCH --error=jobname.e%J	          # The file where run time errors will be dumped
  #SBATCH --output=jobname.o%J	          # The file where the output of the terminal will be dumped
- #SBATCH -array (or --a)= n              # submits an array job with n identical tasks 
+ #SBATCH -array (or --a)= n               # submits an array job with n identical tasks 
  #SBATCH --mail (or -M)                   # send a mail notification  
 
  # Now list your executable command/commands.
@@ -319,11 +343,16 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 ```
 <p align="center">
 <img width="891" alt="Screen Shot 2024-03-27 at 11 25 54 AM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/e4d330ef-a0f6-41be-acb1-e2088017a4ea">
+<img width="835" alt="Screen Shot 2024-03-28 at 12 20 09 PM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/e0aeeabf-0036-4985-b9b5-99a6e05e3056">
 </p>
 
-##### 3.2.1 Debugging option 
-	
-#### 3.2.2 Interactive job
+   ##### 3.2.1 Debugging option 
+you can go for an interactive job explained below or use the flag 
+ 
+ 	'#SBATCH -p=short'  
+  The short partition has a max of 3 hours and a total available resources 48 cores.
+  
+  #### 3.2.2 Interactive job
   
 #### 3.2.2 Batch job
 In this tutorial, we will do some text manipulation. there are 4 FASTQ files available to use. Let's explore the files first.
