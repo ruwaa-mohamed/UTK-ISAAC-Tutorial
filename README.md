@@ -355,11 +355,12 @@ you can go for an interactive job explained below or use the flag
 #### Scheduler and notes or partition availability
 You can check for partition availability by typing `showpartitions`
 
+
 <p align="center">
 <img width="891" alt="Screen Shot 2024-03-28 at 5 16 15 PM"  src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/84500509-944b-4f00-a881-607c426728c0">
 </p>
 
-to specify a specific partition type 
+You can specify a specific partition of interest (I selected 'campus') 
 ```
 showpartitions | grep campus
 ```
@@ -385,8 +386,8 @@ inside this new file, paste the following
 ```bash
 #!/bin/bash
 #SBATCH -J fastq2fasta
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
+#SBATCH -N=1
+#SBATCH -n=1
 #SBATCH -A ACF-UTK0011
 #SBATCH -p campus
 #SBATCH -q campus
@@ -454,3 +455,8 @@ https://developer.nvidia.com/blog/taking-gpu-based-ngs-data-analysis-to-another-
 
 
 https://docs.nvidia.com/clara/parabricks/4.3.0/index.html
+
+
+OIT started to provide a series workshops on Bioinformatics:
+
+`https://oit.utk.edu/hpsc/spring-2024-bioinformatics-workshop-series/`
