@@ -137,6 +137,13 @@ conda install --revision N
 ```
 where N is the revision number. This will remove any packages installed after that revision. 
 
+As a test, let's roll our environment back to revision 0:
+```
+conda install --revision 0
+```
+
+Now if we use `conda list`, we will see that no packages are installed because we rolled back to a fresh version of the environment.
+
 #### To return to the base environment, you can deactivate the current environment
 ```
 conda deactivate
