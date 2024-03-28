@@ -67,9 +67,11 @@ Remember that anything you delete here is gone forever!
 | `module load <tool>` | load the tool you need |
 | `module unload <tool>` | unload a tool you no longer need |
 
+
 ### 3.3 Conda Environments in ISAAC
 
 Conda environments are useful for managing specific packages used for different projects within a server. This allows users to specify different packages and versions needed for specific projects without interfering with other projects or users. Conda is also designed to handle package installation in a streamlined manner and avoid issues with manual installation. 
+
 
 #### Loading Anaconda
 
@@ -84,33 +86,37 @@ For this tutorial, we will create an environment called gst-env:
 ```
 conda create -n gst-env
 ```
-#### To activate your environment
+
+#### Activating Your Environment
 ```
 conda activate gst-env
 ```
-
 Since we're using Open OnDemand's built-in terminal, we may get an error message about this shell not being configured to use `conda activate`. To fix this, we can run the following command:
 ```
 conda init bash
 ```
-
 Then after closing and restarting the shell we should be able to activate our environment.
+
+
+#### Listing All Environments
+
+You can also get a list of all available environments:
+```
+conda info --envs
+```
 
 #### To install packages in the active environment
 ```
 conda install package-name
 ```
-
 Sometimes you need a specific version of a package:
 ```
 conda install package-name=version
 ```
-
 Some packages aren’t included in the default conda channels (or you might want to install a nonstandard version), in which case the channel must be specified. You can look up packages on [anaconda.org](https://anaconda.org/) to find their channel. 
 ```
 conda install channel::package-name
 ```
-
 There are many packages which can be found via Google search or browsing sites such as [anaconda.org](https://anaconda.org/). 
 
 As an example we will install mamba. Mamba is an optional package that helps conda with package installation with features such as faster dependency solving, multi-thread downloading, and a more visually descriptive installation. This can be especially useful if you have a lot of packages installed in your environment, as each new package increases the complexity of dependency solving. If you expect to have a complex environment, it is recommended to install mamba as your first package in a new environment, then use it to install other packages. To install mamba:
@@ -141,20 +147,25 @@ As a test, let's roll our environment back to revision 0:
 ```
 conda install --revision 0
 ```
-
 Now if we use `conda list`, we will see that no packages are installed because we rolled back to a fresh version of the environment.
 
-#### To return to the base environment, you can deactivate the current environment
+
+#### Deactivating an Environment
+
+To return to the base environment, you can deactivate the current environment:
 ```
 conda deactivate
 ```
 This will not entirely delete the environment, but will deactivate it for the current session. This is also recommended before switching to a different environment, as running multiple environments at once can cause conflicts.
 
-#### To delete a conda environment
+#### Deleting an Environment
+
+To entirely delete your conda environment:
 ```
 conda env remove -n env_name
 ```
 It is recommended that you deactivate an environment (if it is active) before you remove it. 
+
 
 ### 3.4 Transferring Files to ISAAC
 
@@ -195,6 +206,7 @@ OnDemand has standard file management similar to a regular Windows or MacOS syst
 
 Other programs such as MobaXTerm for Windows also have visual file managers that allow uploading and downloading local files without using scp. 
 
+
 #### Internet files (wget)
 
 `wget` allows you to download files from any website. The standard syntax is:
@@ -217,6 +229,7 @@ wget -P ./data https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/sam
 wget -P ./data https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/sample_47.fastq.gz
 ```
 Now if we navigate to the data directory and use `ls`, we can confirm that our files successfully downloaded
+
 
 #### Github repositories (git clone)
 
