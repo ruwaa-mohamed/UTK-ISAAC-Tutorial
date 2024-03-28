@@ -166,6 +166,11 @@ conda env remove -n env_name
 ```
 It is recommended that you deactivate an environment (if it is active) before you remove it. 
 
+Now if we check our list of environments again:
+```
+conda info --envs
+```
+We will see our environment is gone.
 
 ### 3.4 Transferring Files to ISAAC
 
