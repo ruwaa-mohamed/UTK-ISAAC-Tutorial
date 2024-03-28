@@ -166,6 +166,10 @@ conda env remove -n env_name
 ```
 It is recommended that you deactivate an environment (if it is active) before you remove it. 
 
+Let's remove our environment:
+```
+conda env remove -n gst-env
+```
 Now if we check our list of environments again:
 ```
 conda info --envs
