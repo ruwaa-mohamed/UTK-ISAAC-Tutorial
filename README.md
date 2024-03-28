@@ -186,11 +186,14 @@ By default, `wget` downloads the file to your current working directory. To spec
 ```
 wget -P <folder_path> <file_URL>
 ```
-So if we want to download the README file from the Github repository for this tutorial, change the name of the new file to "ISAAC_README.md", and save it under the folder "GST":
+Let's download some FASTQ files from GitHub which we will use later. We'll save them under a "data" folder:
 ```
-wget -P ./GST -O ISAAC_README.md https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/README.md 
+wget -P ./data https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/sample_5.fastq.gz
+wget -P ./data https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/sample_12.fastq.gz
+wget -P ./data https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/sample_27.fastq.gz
+wget -P ./data https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/sample_47.fastq.gz
 ```
-(Once I Ruwaa's files are uploaded I will change this to download those files instead of the README file)
+Now if we navigate to the data directory and use `ls`, we can confirm that our files successfully downloaded
 
 #### Github repositories (git clone)
 
@@ -210,7 +213,7 @@ git clone https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial.git
 ```
 This will create a directory for the repository called "UTK-ISAAC-Tutorial" within our current working directory.
 
-(I will add a link here to GitHub basics in case anyone wants to learn more.)
+If you want to learn more about using GitHub, you can check out this tutorial on [GitHub Basics](https://docs.github.com/en/get-started/start-your-journey/hello-world).
 
 ### 3.5 File editing nano vs Vim
 #### Useful Nano Keyboard Commands
