@@ -88,7 +88,7 @@ conda install package-name
 ```
 There are many packages which can be found via Google search or browsing sites such as [anaconda.org](https://anaconda.org/). 
 
-As an example we will install mamba. Mamba is an optional package that helps conda with package installation with features such as faster dependency solving, multi-thread downloading, and a more visually descriptive installation. This can be especially useful if you have a lot of packages installed in your environment, as each new package increases the complexity of dependency solving. If you expect to have a complex environemnt, it is recommended to install mamba as your first package in a new environment, then use it to install other packages. To install mamba:
+As an example we will install mamba. Mamba is an optional package that helps conda with package installation with features such as faster dependency solving, multi-thread downloading, and a more visually descriptive installation. This can be especially useful if you have a lot of packages installed in your environment, as each new package increases the complexity of dependency solving. If you expect to have a complex environment, it is recommended to install mamba as your first package in a new environment, then use it to install other packages. To install mamba:
 ```
 conda install mamba
 ```
