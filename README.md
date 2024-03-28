@@ -294,8 +294,8 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 
 #### Interactive job
 
-
 `salloc --nodes=1 --ntasks=1 --time=01:00:00 --partition=campus`
+
 #### Non-interactive job
 
 ##### Non-batch 
@@ -346,14 +346,23 @@ An example of the batch job file should look like.
 <img width="835" alt="Screen Shot 2024-03-28 at 12 20 09 PM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/e0aeeabf-0036-4985-b9b5-99a6e05e3056">
 </p>
 
-   ##### 3.2.1 Debugging option 
+##### 3.2.1 Debugging option 
 you can go for an interactive job explained below or use the flag 
  
  	'#SBATCH -p=short'  
   The short partition has a max of 3 hours and a total available resources 48 cores.
-  
-  #### 3.2.2 Interactive job
-  
+
+#### Scheduler and notes or partition availability
+You can check for partition availability by typing `showpartitions`
+
+<p align="center">
+<img width="891" alt="Screen Shot 2024-03-28 at 5 16 15 PM"  src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/84500509-944b-4f00-a881-607c426728c0">
+</p>
+
+to specify a specific partition type 
+```
+showpartitions | grep campus
+```
 #### 3.2.2 Batch job
 In this tutorial, we will do some text manipulation. there are 4 FASTQ files available to use. Let's explore the files first.
 1) let's list the files.
