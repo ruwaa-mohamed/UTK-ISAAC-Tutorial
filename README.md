@@ -71,6 +71,13 @@ Remember that anything you delete here is gone forever!
 
 Conda environments are useful for managing specific packages used for different projects within a server. This allows users to specify different packages and versions needed for specific projects without interfering with other projects or users. Conda is also designed to handle package installation in a streamlined manner and avoid issues with manual installation. 
 
+#### Loading Anaconda
+
+First we need to load the anaconda3 module using what we just learned before. If we used `module avail` we would see several versions of Anaconda available on ISAAC, but for now the default will be fine:
+```
+module load anaconda3
+```
+
 #### Creating a Conda Environment
 
 For this tutorial, we will create an environment called gst-env:
