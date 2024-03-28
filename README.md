@@ -326,10 +326,72 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
   #### 3.2.2 Interactive job
   
   #### 3.2.2 Batch job
-  In this interactive job, we will do some text manipulation. there are 4 FASTQ files available to use. Let's explore the files first.
+  In this tutorial, we will do some text manipulation. there are 4 FASTQ files available to use. Let's explore the files first.
+  1) let's list the files.
   ```bash
+  ls -hl
   ```
-  Now, let's convert this FASTQ to FASTA
+  How big are the samples?
+
+  2) let's look at the content of the files 
+  ```bash
+  less sample_12.fastq.gz
+  ```
+  exit with `q`.
+  
+  3) Now, let's convert this FASTQ to FASTA
+  ```bash
+  nano fastq2fasta.sh
+  ```
+ inside this new file, paste the following 
+ ```bash
+#!/bin/bash
+#SBATCH -J fastq2fasta
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH -A ACF-UTK0011
+#SBATCH -p campus
+#SBATCH -q campus
+#SBATCH -t 00:10:00
+#SBATCH --output=log/slurm_%j_%a.out
+
+zcat sample_12.fastq.gz | paste - - - - | cut -f 1,2 | sed  's/\t/\n/' > sample_12.fasta
+ ```
+press `ctrl+S` to save and `ctrl+X` to exit `nano`.
+run the job using `sbatch` command
+```bash
+sbatch fastq2fasta.sh
+```
+
+4) Let's explore the new fasta file
+   ```bash
+   less sample_12.fasta
+   ```
+5) You can run an array job to convert all samples from FASTQ to FASTA in parallel
+   open a new file
+   ```bash
+   nano array_fastq2fasta.sh
+   ```
+   paste the following code inside the new file 
+```bash
+#!/bin/bash
+#SBATCH -J fastq2fasta_array
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH -A ACF-UTK0011
+#SBATCH -p campus
+#SBATCH -q campus
+#SBATCH -t 00:10:00
+#SBATCH --output=log/slurm_%j_%a.out
+#SBATCH --array=5,12,27,27
+
+zcat sample_${SLURM_ARRAY_TASK_ID}.fastq.gz | paste - - - - | cut -f 1,2 | sed  's/\t/\n/' > sample_${SLURM_ARRAY_TASK_ID}.fasta
+```
+press `ctrl+S` to save and `ctrl+X` to exit `nano`.
+run the array job using `sbatch` command
+```bash
+sbatch array_fastq2fasta.sh
+```
 https://developer.nvidia.com/blog/taking-gpu-based-ngs-data-analysis-to-another-level-with-clara-parabricks-pipelines-3-0/
 
 
