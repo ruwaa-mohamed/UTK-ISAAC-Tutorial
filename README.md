@@ -236,6 +236,7 @@ wget -P ./data https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/sam
 wget -P ./data https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/sample_12.fastq.gz
 wget -P ./data https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/sample_27.fastq.gz
 wget -P ./data https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/sample_47.fastq.gz
+
 ```
 Now if we navigate to the data directory and use `ls`, we can confirm that our files successfully downloaded
 
