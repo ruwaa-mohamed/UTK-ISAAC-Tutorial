@@ -397,16 +397,21 @@ The job's age (how long it's been queueing).
 The job's QOS.
 The user's Fairshare
 
-To show your priority use the command `Sprio`
-
-This code will display the priority with a decending order
+To view the factors that comprise a job's scheduling priority use `Sprio`
+This code will display the priority and other factros including users and accounts with a decending order
 ```
-sprio -S '-Y'
+sprio -lS '-Y'
 ```
 you can also list and specifiy a partition
 
 ```
 sprio -l | grep campus
+
+```
+you can also 
+
+```
+sprio -lS '-Y' -u <username>
 ```
 
 #### 3.2.2 Batch job
