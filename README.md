@@ -100,13 +100,6 @@ Then after closing and restarting the shell we should be able to activate our en
 ```
 conda install package-name
 ```
-There are many packages which can be found via Google search or browsing sites such as [anaconda.org](https://anaconda.org/). 
-
-As an example we will install mamba. Mamba is an optional package that helps conda with package installation with features such as faster dependency solving, multi-thread downloading, and a more visually descriptive installation. This can be especially useful if you have a lot of packages installed in your environment, as each new package increases the complexity of dependency solving. If you expect to have a complex environment, it is recommended to install mamba as your first package in a new environment, then use it to install other packages. To install mamba:
-```
-conda install conda-forge::mamba
-```
-Once mamba is installed, we can use it to install any further packages. Anywhere you see `conda install`, replace with `mamba install`. All other syntax is the same.
 
 Sometimes you need a specific version of a package:
 ```
@@ -117,6 +110,15 @@ Some packages aren’t included in the default conda channels (or you might want
 ```
 conda install channel::package-name
 ```
+
+There are many packages which can be found via Google search or browsing sites such as [anaconda.org](https://anaconda.org/). 
+
+As an example we will install mamba. Mamba is an optional package that helps conda with package installation with features such as faster dependency solving, multi-thread downloading, and a more visually descriptive installation. This can be especially useful if you have a lot of packages installed in your environment, as each new package increases the complexity of dependency solving. If you expect to have a complex environment, it is recommended to install mamba as your first package in a new environment, then use it to install other packages. To install mamba:
+```
+conda install conda-forge::mamba
+```
+This will also automatically install any dependencies needed for mamba to work. Once mamba is installed, we can use it to install any further packages. Anywhere you see `conda install`, replace with `mamba install`. All other syntax is the same.
+
 
 #### View packages installed in the active environment
 ```
