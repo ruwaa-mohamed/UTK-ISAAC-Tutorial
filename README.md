@@ -311,15 +311,19 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 **It will only alter until the job starts running**
 
 `scontrol update JobID=jobid NumTasks=Total_tasks JobName=any_new_name TimeLimit=day-hh:mm:ss`
-There are two type of jobs interactivea nd non-interactive (batch and non-batch)
+There are two type of jobs interactivea (batch or non-batch) and non-interactive (batch)
 #### Interactive job
 
-`salloc --nodes=1 --ntasks=1 --time=00:00:00 --partition=campus`
+##### non-batch 
+You will have keep the termail a live until the allocation of resources completed 
 
-#### Non-interactive job
 
-##### Non-batch
-You will have to wait for the allocation of resources
+`salloc --nodes=1 --ntasks=1 --time=00:10:00 --partition=campus`
+
+##### batch
+
+You will have to wait for the allocation of resources 
+
 `srun -A <account> -N  <# nodes> -n <# cores> -t <time> -p <partition> -q <quality of service> 'script'`
 
 `srun -A ACF-UTK0011 -N 1 -n 1 -t 00:00:30 -p campus -q campus 'hostname'`
@@ -335,6 +339,8 @@ srun: job 1384918 queued and waiting for resources
 srun: job 1384918 has been allocated resources
 ilm0837
 ```
+
+#### Non-interactive job
 
 ##### Batch
 
@@ -384,6 +390,25 @@ You can specify a specific partition of interest (I selected 'campus')
 ```
 showpartitions | grep campus
 ```
+
+### Job priority:
+Each Slurm job's priority is computed based on several factors such as:
+The job's age (how long it's been queueing).
+The job's QOS.
+The user's Fairshare
+
+To show your priority use the command `Sprio`
+
+This code will display the priority with a decending order
+```
+sprio -S '-Y'
+```
+you can also list and specifiy a partition
+
+```
+sprio -l | grep campus
+```
+
 #### 3.2.2 Batch job
 In this tutorial, we will do some text manipulation. there are 4 FASTQ files available to use. Let's explore the files first.
 1) let's list the files.
