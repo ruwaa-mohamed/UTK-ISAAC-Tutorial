@@ -260,16 +260,36 @@ git clone https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial.git
 This will create a directory for the repository called "UTK-ISAAC-Tutorial" within our current working directory.
 
 If you want to learn more about using GitHub, you can check out this tutorial on [GitHub Basics](https://docs.github.com/en/get-started/start-your-journey/hello-world).
-### 3.5 File editing nano vs Vim
-#### Useful Nano Keyboard Commands
+
+### 3.5 File editing nano
+Why we can't use microsoft word or other text editing tools
+Lets start with creating a txt file named test.txt in your scratch 
+note; there is two ways to creat a folder in your scratch  via absolute path or you `cd` their. 
+
+` /lustre/isaac/scratch/<your_username> `
+
+In your terminal type 
+``` nano test.txt ```
+This comand will invoke nano to open and creat a file called test.txt 
+
+<p align="center">
+<img width="548" alt="Screen Shot 2024-03-28 at 6 44 44 PM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/15bd8b00-7fa9-4aa4-b31b-8ffdcde4c2ae">
+</p>
+
+We will go over the nano interphase and different features
+
+After open nano and creat a file called test.txt  then type `I am learning new skills`. if you want to save  `^O` which is Control + O to write out. 
+Now you can exit by `^E` Control + X. 
+
+#### Link for a useful Nano Keyboard Commands
 https://staffwww.fullcoll.edu/sedwards/Nano/UsefulNanoKeyCommands.html
-#### Useful Vim tutorial
+
+#### Useful Vim tutorial for advance powerfull option 
 https://www.openvim.com/
 
 ### 3.6 Slurm introduction
 Slurm is an open-source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. 
 `slurmctld`, to monitor resources and work. Each compute server (node) `slurmd daemon` [fault-tolerant hierarchical communications]; can be compared to a remote shell: it waits for work, executes that work, returns status, and waits for more work `slurmdbd` (Slurm DataBase Daemon) which can be used to record accounting information for multiple Slurm-managed clusters in a single database.
-
 
 <p align="center">
 <img width="548" alt="Screen Shot 2024-03-26 at 12 51 01 PM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/909f844f-f08e-4bd5-8fe3-3c8314007b09">
@@ -291,14 +311,14 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 **It will only alter until the job starts running**
 
 `scontrol update JobID=jobid NumTasks=Total_tasks JobName=any_new_name TimeLimit=day-hh:mm:ss`
-
+There are two type of jobs interactivea nd non-interactive (batch and non-batch)
 #### Interactive job
 
-`salloc --nodes=1 --ntasks=1 --time=01:00:00 --partition=campus`
+`salloc --nodes=1 --ntasks=1 --time=00:00:00 --partition=campus`
 
 #### Non-interactive job
 
-##### Non-batch 
+##### Non-batch
 You will have to wait for the allocation of resources
 `srun -A <account> -N  <# nodes> -n <# cores> -t <time> -p <partition> -q <quality of service> 'script'`
 
@@ -322,18 +342,18 @@ An example of the batch job file should look like.
 ```
 #!/bin/bash
  #This file is a submission script to request the ISAAC resources from Slurm 
- #SBATCH -J jobname		          # The name of the job
+ #SBATCH -J jobname		                     # The name of the job
  #SBATCH -account (or -A) ACF-UTK0011     # The project account to be charged
  #SBATCH --time (or -t)=hh:mm:ss          # Wall time (days-hh:mm:ss)
  #SBATCH --nodes (or -N)=1                # Number of nodes
  #SBATCH --ntasks (or -n)= 48.            # Total number of cores requested
  #SBATCH --ntasks-per-node=48             # cpus per node 
  #SBATCH --partition(or -p)=campus        # If not specified then default is "campus"
- #SBATCH --qos=campus		          # quality of Service (QOS)
+ #SBATCH --qos=campus		                   # quality of Service (QOS)
  #SBATCH --chdir=directory                # Used to change the working directory. The default working directory is the one from where a job is submitted
- #SBATCH --error=jobname.e%J	          # The file where run time errors will be dumped
- #SBATCH --output=jobname.o%J	          # The file where the output of the terminal will be dumped
- #SBATCH -array (or --a)= n               # submits an array job with n identical tasks 
+ #SBATCH --error=jobname.e%J	             # The file where run time errors will be dumped
+ #SBATCH --output=jobname.o%J	            # The file where the output of the terminal will be dumped
+ #SBATCH --array (or -a)=<indexes>        # submits an array job with n identical tasks 
  #SBATCH --mail (or -M)                   # send a mail notification  
 
  # Now list your executable command/commands.
