@@ -90,6 +90,7 @@ You can also get a list of all available environments:
 ```
 conda info --envs
 ```
+The currently active environment is indicated with an asterisk `*`
 
 #### 3.5. Installing Packages in the Active Environment
 ```
