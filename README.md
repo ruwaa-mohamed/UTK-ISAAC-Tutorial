@@ -173,7 +173,7 @@ There are several methods to transfer files from your local computer or the inte
 ```
 scp [source] [destination]
 ```
-Be sure to always denote folders with a forward slash `/` even though your local file system will sometimes list directories with a backslash `\`. A linux terminal will not correctly process backslashes.
+Be sure to always denote folders/directories with a forward slash `/` even though your local file system will sometimes list them with a backslash `\`. A linux terminal will not correctly process backslashes.
 
 So, if we want to transfer a local file called "file.txt" onto ISAAC:
 ```
