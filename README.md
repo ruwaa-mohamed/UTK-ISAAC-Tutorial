@@ -106,7 +106,7 @@ Some packages aren’t included in the default conda channels (or you might want
 ```
 conda install channel::package-name
 ```
-As an example we will install mamba. Mamba is an optional package that helps conda with package installation with features such as faster dependency solving, multi-thread downloading, and a more visually descriptive installation. This can be especially useful if you have a lot of packages installed in your environment, as each new package increases the complexity of dependency solving. If you expect to have a complex environment, it is recommended to install mamba as your first package in a new environment, then use it to install other packages. To install mamba:
+As an example we will install mamba. Mamba is an optional package that helps conda with package installation with features such as faster dependency solving, multi-thread downloading, and a more visually descriptive installation. This can be especially useful if you have a lot of packages installed in your environment, as each new package increases the complexity of dependency solving. If you expect to have a complex environment, you may want to install mamba as your first package in the new environment, then use it to install other packages. To install mamba:
 ```
 conda install conda-forge::mamba
 ```
