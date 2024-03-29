@@ -324,7 +324,7 @@ You will have keep the termail a live until the allocation of resources complete
 
 You will have to wait for the allocation of resources 
 
-`srun -A <account> -N  <# nodes> -n <# cores> -t <time> -p <partition> -q <quality of service> 'script'`
+`srun -A <account> -N  <#nodes> -n <#cores> -t <time> -p <partition> -q <quality of service> 'script'`
 
 `srun -A ACF-UTK0011 -N 1 -n 1 -t 00:00:30 -p campus -q campus 'hostname'`
 ```
