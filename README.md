@@ -165,7 +165,7 @@ We will see our environment is gone.
 
 ### 4. Transferring Files to ISAAC
 
-There are several methods to transfer file from your local computer or the internet onto ISAAC.
+There are several methods to transfer files from your local computer or the internet onto ISAAC.
 
 #### 4.1. Secure Copy Protocol (scp)
 
