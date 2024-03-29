@@ -77,7 +77,7 @@ conda create -n gst-env
 ```
 conda activate gst-env
 ```
-Since we're using Open OnDemand's built-in terminal, we may get an error message about this shell not being configured to use `conda activate`. To fix this, we can run the following command:
+If it's your first time using Open OnDemand, you may get an error message about this shell not being configured to use `conda activate`. To fix this, run the following command:
 ```
 conda init bash
 ```
