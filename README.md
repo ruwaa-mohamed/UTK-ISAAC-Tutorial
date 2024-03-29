@@ -500,7 +500,7 @@ sbatch array_fastq2fasta.sh
 ```
 
 
-**2_Protein Dynamics Tutorial** 
+#### **2_Protein Dynamics Tutorial** 
 
 1) create a conda environment 
 ```bash
@@ -574,12 +574,11 @@ sys     0m0.002s
 11) run the whole analysis in a script. How much resources should we allocate? 
 
 
+#### Using GPU to run your analysis in NVIDIA:
+https://docs.nvidia.com/clara/parabricks/4.3.0/index.html
 
 https://developer.nvidia.com/blog/taking-gpu-based-ngs-data-analysis-to-another-level-with-clara-parabricks-pipelines-3-0/
 
-https://docs.nvidia.com/clara/parabricks/4.3.0/index.html
-
-
-OIT started to provide a series workshops on Bioinformatics:
+#### OIT started to provide a series workshops on Bioinformatics:
 
 `https://oit.utk.edu/hpsc/spring-2024-bioinformatics-workshop-series/`
