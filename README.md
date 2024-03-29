@@ -91,7 +91,7 @@ You can also get a list of all available environments:
 conda info --envs
 ```
 
-#### 3.5. To install packages in the active environment
+#### 3.5. Installing Packages in the Active Environment
 ```
 conda install package-name
 ```
@@ -103,8 +103,6 @@ Some packages aren’t included in the default conda channels (or you might want
 ```
 conda install channel::package-name
 ```
-There are many packages which can be found via Google search or browsing sites such as [anaconda.org](https://anaconda.org/). 
-
 As an example we will install mamba. Mamba is an optional package that helps conda with package installation with features such as faster dependency solving, multi-thread downloading, and a more visually descriptive installation. This can be especially useful if you have a lot of packages installed in your environment, as each new package increases the complexity of dependency solving. If you expect to have a complex environment, it is recommended to install mamba as your first package in a new environment, then use it to install other packages. To install mamba:
 ```
 conda install conda-forge::mamba
@@ -112,12 +110,12 @@ conda install conda-forge::mamba
 This will also automatically install any dependencies needed for mamba to work. Once mamba is installed, we can use it to install any further packages. Anywhere you see `conda install`, replace with `mamba install`. All other syntax is the same.
 
 
-#### 3.6. View packages installed in the active environment
+#### 3.6. View Packages Installed in the Active Environment
 ```
 conda list
 ```
 
-#### 3.7. Rolling back an environment
+#### 3.7. Rolling Back an Environment
 
 Sometimes you may run into issues after installing conflicting packages in a conda environment. This can be solved by rolling back your environment to a previous version. To see versions of your environment:
 ```
