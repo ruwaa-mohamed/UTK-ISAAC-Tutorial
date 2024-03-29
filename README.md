@@ -467,6 +467,48 @@ to exit press `CTRL+C`
 scancel [job_id]
 ```
 
+let's create an infinte loop to test these commands.
+open a new file with this command
+```bash
+nano infinite_loop.sh 
+```
+paste the following code in the new file 
+```bash
+#!/bin/bash
+#SBATCH -J infinite
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH -A ACF-UTK0011
+#SBATCH -p campus
+#SBATCH -q campus
+#SBATCH -t 00:10:00
+#SBATCH --output=log/slurm_%j_%a.out
+
+while true
+do
+    echo "This loop will run indefinitely"
+done
+```
+click `CTRL+S` to save and `CTRL+X` to exit.
+
+Submit the job to run using `sbatch` command.
+```bash
+sbatch infinite_loop.sh 
+```
+
+Now let's check the job is running.
+```bash
+squeue -u [netid] -i 5
+```
+
+to stop press `CTRL+C`
+
+to cancel the job use `scancel` command. Note that the job_id will be different for everyone.
+```bash
+scancel [job_id]
+squeue -u [netid]
+```
+
 6) Let's explore the new fasta file
 ```bash
 less sample_12.fasta
