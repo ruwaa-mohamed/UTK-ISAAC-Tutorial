@@ -181,7 +181,7 @@ scp C:/Users/<Local-Account>/Documents/file.txt <ISAAC-username>@dtn1.isaac.utk.
 ```
 Dtn stands for "data transfer node" and OIT prefers you use this node to transfer files, rather than the login node. More information about this can be found [at this link](https://oit.utk.edu/hpsc/isaac-open-enclave-new-kpb/data-transfer-new-cluster-kpb-2/).
 
-`scp` commands must be run from a linux terminal while *not* logged into the server. If you are already on ISAAC, the `scp` command will not be able to use the local path. You can run multiple Linux terminals at once to allow transfering local files while being logged into ISAAC on another terminal.
+`scp` commands must be run from a linux terminal while *not* logged into the server. If you are already on ISAAC, the `scp` command will not be able to use the local path. You can run multiple Linux terminals at once to allow transferring local files while being logged into ISAAC on another terminal.
 
 Additionally, this will prompt you for your password, since `scp` needs to log into ISAAC to copy the file. 
 
