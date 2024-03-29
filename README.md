@@ -25,13 +25,13 @@ itself, and troubleshooting tips.
 
 ### 1. Logging into ISSAC-NG
 
-#### Open OnDemand
+#### 1.1. Open OnDemand
 Go to [login.isaac.utk.edu](https://login.isaac.utk.edu) 
 
 Log in with your credentials.
 On the top bar click on the "Clusters" dropdown and click on >_ISAAC Shell Access
 
-#### SSH through a terminal
+#### 1.2. SSH through a terminal
 Open a terminal and execute the following command
 ```
 ssh <your-NetID>@login.isaac.tennessee.edu 
@@ -60,7 +60,7 @@ and create a new directory where you'll store what we do here today.
 Try renaming it, deleting it and recreating it.
 Remember that anything you delete here is gone forever!
 
-#### Checking the available tools
+#### 2.3. Checking the available tools
 | Command | Description |
 | --- | --- |
 | `module avail` | check what tools are available |
@@ -176,11 +176,11 @@ conda info --envs
 ```
 We will see our environment is gone.
 
-### 4 Transferring Files to ISAAC
+### 4. Transferring Files to ISAAC
 
 There are several methods to transfer file from your local computer or the internet onto ISAAC.
 
-#### 4.1 Secure Copy Protocol (scp)
+#### 4.1. Secure Copy Protocol (scp)
 
 `scp` is used to take files from your local device and copy them to a server (or vice versa). The general syntax is:
 ```
@@ -281,10 +281,10 @@ We will go over the nano interphase and different features
 After open nano and creat a file called test.txt  then type `I am learning new skills`. if you want to save  `^O` which is Control + O to write out. 
 Now you can exit by `^E` Control + X. 
 
-#### Link for a useful Nano Keyboard Commands
+#### 5.1. Link for a useful Nano Keyboard Commands
 https://staffwww.fullcoll.edu/sedwards/Nano/UsefulNanoKeyCommands.html
 
-#### Useful Vim tutorial for advance powerfull option 
+#### 5.2. Useful Vim tutorial for advance powerfull option 
 https://www.openvim.com/
 
 ### 6. Slurm introduction
