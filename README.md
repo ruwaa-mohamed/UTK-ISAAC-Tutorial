@@ -21,9 +21,9 @@ itself, and troubleshooting tips.
 
 2.2. click on `Request an ISAAC Account` from the menu on the left and follow the link from there.
 
-## 3. In-class Tutorial
+## In-class Tutorial
 
-### 3.1 Logging into ISSAC-NG
+### 1 Logging into ISSAC-NG
 
 #### Open OnDemand
 Go to [login.isaac.utk.edu](https://login.isaac.utk.edu) 
@@ -37,8 +37,8 @@ Open a terminal and execute the following command
 ssh <your-NetID>@login.isaac.tennessee.edu 
 ```
 
-### 3.2 Navigating the shell environment
-#### Useful commands
+### 2 Navigating the shell environment
+#### 2.1 Useful commands
 | Command | Description |
 | --- | --- |
 | `pwd` | print current working directory |
@@ -51,7 +51,7 @@ ssh <your-NetID>@login.isaac.tennessee.edu
 | `mv <source> <target>` | rename <source> (file or directory) to <target> |
 | `rm -i <filename>` | remove (delete) file named <file> |
 
-#### Excercise
+#### 2.2 Excercise
 Navigate to your scratch space located in 
 ```
 /lustre/isaac/scratch/<your_username>
@@ -68,26 +68,26 @@ Remember that anything you delete here is gone forever!
 | `module unload <tool>` | unload a tool you no longer need |
 
 
-### 3.3 Conda Environments in ISAAC
+### 3 Conda Environments in ISAAC
 
 Conda environments are useful for managing specific packages used for different projects within a server. This allows users to specify different packages and versions needed for specific projects without interfering with other projects or users. Conda is also designed to handle package installation in a streamlined manner and avoid issues with manual installation. 
 
 
-#### Loading Anaconda
+#### 3.1 Loading Anaconda
 
 First we need to load the anaconda3 module using what we just learned before. If we used `module avail` we would see several versions of Anaconda available on ISAAC, but for now the default will be fine:
 ```
 module load anaconda3
 ```
 
-#### Creating a Conda Environment
+#### 3.2 Creating a Conda Environment
 
 For this tutorial, we will create an environment called gst-env:
 ```
 conda create -n gst-env
 ```
 
-#### Activating Your Environment
+#### 3.3 Activating Your Environment
 ```
 conda activate gst-env
 ```
@@ -98,14 +98,14 @@ conda init bash
 Then after closing and restarting the shell we should be able to activate our environment.
 
 
-#### Listing All Environments
+#### 3.4 Listing All Environments
 
 You can also get a list of all available environments:
 ```
 conda info --envs
 ```
 
-#### To install packages in the active environment
+#### 3.5 To install packages in the active environment
 ```
 conda install package-name
 ```
@@ -126,12 +126,12 @@ conda install conda-forge::mamba
 This will also automatically install any dependencies needed for mamba to work. Once mamba is installed, we can use it to install any further packages. Anywhere you see `conda install`, replace with `mamba install`. All other syntax is the same.
 
 
-#### View packages installed in the active environment
+#### 3.6 View packages installed in the active environment
 ```
 conda list
 ```
 
-#### Rolling back an environment
+#### 3.7 Rolling back an environment
 
 Sometimes you may run into issues after installing conflicting packages in a conda environment. This can be solved by rolling back your environment to a previous version. To see versions of your environment:
 ```
@@ -150,7 +150,7 @@ conda install --revision 0
 Now if we use `conda list`, we will see that no packages are installed because we rolled back to a fresh version of the environment.
 
 
-#### Deactivating an Environment
+#### 3.8 Deactivating an Environment
 
 To return to the base environment, you can deactivate the current environment:
 ```
@@ -158,7 +158,7 @@ conda deactivate
 ```
 This will not entirely delete the environment, but will deactivate it for the current session. This is also recommended before switching to a different environment, as running multiple environments at once can cause conflicts.
 
-#### Deleting an Environment
+#### 3.9 Deleting an Environment
 
 To entirely delete your conda environment:
 ```
@@ -176,11 +176,11 @@ conda info --envs
 ```
 We will see our environment is gone.
 
-### 3.4 Transferring Files to ISAAC
+### 4 Transferring Files to ISAAC
 
 There are several methods to transfer file from your local computer or the internet onto ISAAC.
 
-#### Secure Copy Protocol (scp)
+#### 4.1 Secure Copy Protocol (scp)
 
 `scp` is used to take files from your local device and copy them to a server (or vice versa). The general syntax is:
 ```
@@ -207,7 +207,7 @@ You can also copy an entire folder using the `-r` flag (recursive):
 scp -r C:/Users/<Local-Account>/Documents/Folder <ISAAC-username>@login.isaac.utk.edu:/lustre/isaac/scratch/<ISAAC_username>
 ```
 
-#### Local file transfer in Open OnDemand
+#### 4.2 Local file transfer in Open OnDemand
 
 If you are using ISAAC's OnDemand service, scp won't work because the virtual terminal is automatically logged into ISAAC and cannot access your local file system. Fortunately, there is an even easier way to upload local files to the server.
  
@@ -216,7 +216,7 @@ OnDemand has standard file management similar to a regular Windows or MacOS syst
 Other programs such as MobaXTerm for Windows also have visual file managers that allow uploading and downloading local files without using scp. 
 
 
-#### Internet files (wget)
+#### 4.3 Internet files (wget)
 
 `wget` allows you to download files from any website. The standard syntax is:
 ```
@@ -241,7 +241,7 @@ wget -P ./data https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/sam
 Now if we navigate to the data directory and use `ls`, we can confirm that our files successfully downloaded
 
 
-#### Github repositories (git clone)
+#### 4.4 Github repositories (git clone)
 
 You can also clone an entire Github repository. This is similar to copying every file in that repository, but also has several advantages for certain cases: 
   * Has increased efficiency of file transfer using Github's compression protocols
@@ -261,7 +261,7 @@ This will create a directory for the repository called "UTK-ISAAC-Tutorial" with
 
 If you want to learn more about using GitHub, you can check out this tutorial on [GitHub Basics](https://docs.github.com/en/get-started/start-your-journey/hello-world).
 
-### 3.5 File editing nano
+### 5 File editing nano
 Why we can't use microsoft word or other text editing tools
 Lets start with creating a txt file named test.txt in your scratch 
 note; there is two ways to creat a folder in your scratch  via absolute path or you `cd` their. 
@@ -287,7 +287,7 @@ https://staffwww.fullcoll.edu/sedwards/Nano/UsefulNanoKeyCommands.html
 #### Useful Vim tutorial for advance powerfull option 
 https://www.openvim.com/
 
-### 3.6 Slurm introduction
+### 6 Slurm introduction
 Slurm is an open-source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. 
 `slurmctld`, to monitor resources and work. Each compute server (node) `slurmd daemon` [fault-tolerant hierarchical communications]; can be compared to a remote shell: it waits for work, executes that work, returns status, and waits for more work `slurmdbd` (Slurm DataBase Daemon) which can be used to record accounting information for multiple Slurm-managed clusters in a single database.
 
@@ -295,7 +295,7 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 <img width="548" alt="Screen Shot 2024-03-26 at 12 51 01 PM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/909f844f-f08e-4bd5-8fe3-3c8314007b09">
 </p>
 
-### Slurm commands
+#### 6.1 Slurm commands
 | Command | Description |
 | --- | --- |
 | `sbatch <Job File Name>` | Batch job submission |
@@ -307,20 +307,20 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 | `scontrol update job <Job ID>` | Job update |
 | `scontrol show job <Job ID>` | Job details |
 
-#### Altering batch job
+#### 6.2 Altering batch job
 **It will only alter until the job starts running**
 
 `scontrol update JobID=jobid NumTasks=Total_tasks JobName=any_new_name TimeLimit=day-hh:mm:ss`
 There are two type of jobs interactivea (batch or non-batch) and non-interactive (batch)
-#### Interactive job
+#### 6.3 Interactive job
 
-##### non-batch 
+##### 6.3.1 non-batch 
 You will have keep the termail a live until the allocation of resources completed 
 
 
 `salloc --nodes=1 --ntasks=1 --time=00:10:00 --partition=campus`
 
-##### batch
+##### 6.3.2 batch
 
 You will have to wait for the allocation of resources 
 
@@ -340,9 +340,9 @@ srun: job 1384918 has been allocated resources
 ilm0837
 ```
 
-#### Non-interactive job
+#### 6.4 Non-interactive job
 
-##### Batch
+##### 6.4.1 Batch
 
 An example of the batch job file should look like.
 ```
@@ -372,13 +372,13 @@ An example of the batch job file should look like.
 <img width="835" alt="Screen Shot 2024-03-28 at 12 20 09 PM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/e0aeeabf-0036-4985-b9b5-99a6e05e3056">
 </p>
 
-##### 3.2.1 Debugging option 
+##### 6.4.2 Debugging option 
 you can go for an interactive job explained below or use the flag 
  
  	'#SBATCH -p=short'  
   The short partition has a max of 3 hours and a total available resources 48 cores.
 
-#### Scheduler and notes or partition availability
+#### 6.5 Scheduler and notes or partition availability
 You can check for partition availability by typing `showpartitions`
 
 
@@ -391,7 +391,7 @@ You can specify a specific partition of interest (I selected 'campus')
 showpartitions | grep campus
 ```
 
-### Job priority:
+### 6.6 Job priority:
 Each Slurm job's priority is computed based on several factors such as:
 The job's age (how long it's been queueing).
 The job's QOS.
@@ -414,7 +414,7 @@ you can also
 sprio -lS '-Y' -u <username>
 ```
 
-#### 3.2.2 Batch job
+#### 6.6 Sbatch job
 In this tutorial, we will do some text manipulation. there are 4 FASTQ files available to use. Let's explore the files first.
 1) let's list the files.
 ```bash
@@ -513,6 +513,8 @@ squeue -u [netid]
 ```bash
 less sample_12.fasta
 ```
+
+#### 6.7 Array batch job
 7) You can run an array job to convert all samples from FASTQ to FASTA in parallel
 
 open a new file
@@ -541,8 +543,7 @@ run the array job using `sbatch` command
 sbatch array_fastq2fasta.sh
 ```
 
-
-#### **2_Protein Dynamics Tutorial** 
+#### 6.8 **2_Protein Dynamics Tutorial** 
 
 1) create a conda environment 
 ```bash
@@ -616,11 +617,11 @@ sys     0m0.002s
 11) run the whole analysis in a script. How much resources should we allocate? 
 
 
-#### Using GPU to run your analysis in NVIDIA:
+#### 6.9 Using GPU to run your analysis in NVIDIA:
 https://docs.nvidia.com/clara/parabricks/4.3.0/index.html
 
 https://developer.nvidia.com/blog/taking-gpu-based-ngs-data-analysis-to-another-level-with-clara-parabricks-pipelines-3-0/
 
-#### OIT started to provide a series workshops on Bioinformatics:
+#### 6.10 OIT started to provide a series workshops on Bioinformatics:
 
 `https://oit.utk.edu/hpsc/spring-2024-bioinformatics-workshop-series/`
