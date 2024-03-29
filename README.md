@@ -93,6 +93,8 @@ conda info --envs
 The currently active environment is indicated with an asterisk `*`
 
 #### 3.5. Installing Packages in the Active Environment
+
+The general syntax for installing a package:
 ```
 conda install package-name
 ```
