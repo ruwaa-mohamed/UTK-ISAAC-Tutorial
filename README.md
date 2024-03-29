@@ -500,9 +500,82 @@ sbatch array_fastq2fasta.sh
 ```
 
 
+**2_Protein Dynamics Tutorial** 
+
+1) create a conda environment 
+```bash
+conda create --name md
+```
+if asked to proceed, type `y` to accept.
+
+2) activate the `md` conda environment
+```bash 
+conda activate md
+```
+
+3) install the required packages 
+```bash
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+
+conda install gromacs
+```
+you will be asked `Proceed ([y]/n)?`. type `y` to proceed
+
+4) go to your home directry
+```bash
+cd
+pwd
+```
+this should print the path to the home directory
+
+5) create a folder for the md_simulation
+```bash
+mkdir md_tutorial
+cd md_tutorial
+```
+
+6) Download the protein 3D structure and all required files
+```bash
+wget https://files.rcsb.org/view/1AKI.pdb
+wget http://www.mdtutorials.com/gmx/lysozyme/Files/ions.mdp
+wget http://www.mdtutorials.com/gmx/lysozyme/Files/minim.mdp
+wget http://www.mdtutorials.com/gmx/lysozyme/Files/nvt.mdp
+wget http://www.mdtutorials.com/gmx/lysozyme/Files/npt.mdp
+wget http://www.mdtutorials.com/gmx/lysozyme/Files/md.mdp
+```
+7) confirm all the files are there 
+```bash
+ls
+```
+the output should look like this 
+```bash
+1AKI.pdb  ions.mdp  md.mdp  minim.mdp  npt.mdp  nvt.mdp
+```
+
+8) removing water molecules from the protein structure 
+```bash
+grep -v HOH 1AKI.pdb > 1AKI_clean.pdb
+```
+
+9) follow the tutorial from **5.3.1** in the pdf document named `2_Tutorial.pdf`
+
+10) use the command `time` before any command to calculate how much time does it take to run. 
+```bash
+time grep -v HOH 1AKI.pdb > 1AKI_clean.pdb
+```
+output will have this at the end showing the time consumed for this job.
+```bash
+
+real    0m0.024s
+user    0m0.000s
+sys     0m0.002s
+```
+11) run the whole analysis in a script. How much resources should we allocate? 
+
+
+
 https://developer.nvidia.com/blog/taking-gpu-based-ngs-data-analysis-to-another-level-with-clara-parabricks-pipelines-3-0/
-
-
 
 https://docs.nvidia.com/clara/parabricks/4.3.0/index.html
 
