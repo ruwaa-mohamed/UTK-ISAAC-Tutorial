@@ -1,17 +1,3 @@
-## From the syllabus
-Milestones: The tutorials should be of broad interest, deliver an overview over the topic at hand,
-and build on students’ prior expertise.
-- Define the topic: What skills will be attractive to other students?
-- Learning goals: What should participants able to do at the end?
-- Define specific tasks and techniques to be taught.
-- What computer platform is needed for the tutorial? What software?
-- What prior knowledge is needed, and do the participants have it?
-- What scientific question can be answered in this tutorial?
-- Identify suitable existing datasets to be used (case study).
-- Prepare tutorial manual with materials for advance preparation, a script for the tutorial
-itself, and troubleshooting tips.
-- Practice the tutorial >2 weeks ahead of time.
-
 ## Before you come
 ### 1. Have you filled in the [pre-class survey](https://docs.google.com/forms/d/e/1FAIpQLSe7RZQYl7pppgfshM4Hf9he2mEwyWfIu5Zc5jr7_lU74ioZjg/viewform)
 
@@ -190,21 +176,23 @@ Be sure to always denote folders with a forward slash `/` even though your local
 
 So, if we want to transfer a local file called "file.txt" onto ISAAC:
 ```
-scp C:/Users/<Local-Account>/Documents/file.txt <ISAAC-username>@login.isaac.utk.edu:/lustre/isaac/scratch/<ISAAC_username>/file.txt
+scp C:/Users/<Local-Account>/Documents/file.txt <ISAAC-username>@dtn1.isaac.utk.edu:/lustre/isaac/scratch/<ISAAC_username>/file.txt
 ```
-You need to do this from a linux terminal while *not* logged into the server. If you are already on ISAAC, the `scp` command will not be able to use the local path. You can run multiple Linux terminals at once to allow transfering local files while being logged into ISAAC on another terminal.
+Dtn stands for "data transfer node" and OIT prefers you use this node to transfer files, rather than the login node. More information about this can be found [at this link](https://oit.utk.edu/hpsc/isaac-open-enclave-new-kpb/data-transfer-new-cluster-kpb-2/).
+
+`scp` commands must be run from a linux terminal while *not* logged into the server. If you are already on ISAAC, the `scp` command will not be able to use the local path. You can run multiple Linux terminals at once to allow transfering local files while being logged into ISAAC on another terminal.
 
 Additionally, this will prompt you for your password, since `scp` needs to log into ISAAC to copy the file. 
 
 You can reverse the synax if you want to copy a file from ISAAC onto your local device:
 ```
-scp <ISAAC-username>@login.isaac.utk.edu:/lustre/isaac/scratch/<ISAAC_username>/file.txt C:/Users/<Local-Account>/Documents/file.txt
+scp <ISAAC-username>@dtn1.isaac.utk.edu:/lustre/isaac/scratch/<ISAAC_username>/file.txt C:/Users/<Local-Account>/Documents/file.txt
 ```
 Again, this will require a terminal session that is *not* logged into the server, and you will have to enter your password.
 
 You can also copy an entire folder using the `-r` flag (recursive):
 ```
-scp -r C:/Users/<Local-Account>/Documents/Folder <ISAAC-username>@login.isaac.utk.edu:/lustre/isaac/scratch/<ISAAC_username>
+scp -r C:/Users/<Local-Account>/Documents/Folder <ISAAC-username>@dtn1.isaac.utk.edu:/lustre/isaac/scratch/<ISAAC_username>
 ```
 
 #### 4.2. Local file transfer in Open OnDemand
