@@ -253,29 +253,40 @@ If you want to learn more about using GitHub, you can check out this tutorial on
 ### 5. File editing nano
 Why we can't use Microsoft Word or other text editing tools?
 
-Let's start with creating a Text file named test.txt in your scratch directory
+#### 5.1. Create a Text file named test.txt in your scratch directory
+
+In your terminal type 
+
+```mkdir scripts``` we want to be organized by creating a directory named scripts 
+
 note; there are two ways to create a folder in your scratch via absolute path or you `cd` there. 
 
 ` /lustre/isaac/scratch/<your_username> `
 
-In your terminal type 
-```mkdir nano_files```
-``` nano test.txt ```
-This command will invoke nano to open and create a file called test.txt 
+``` nano test.txt ``` now we create a txt file named test.txt by calling nano 
 
 You can get familiar with nano interphase and different features.
 
-After opening nano and creating a file called test.txt  let's type `I am learning new skills`. 
+Now type `I am learning new skills`. 
 
 If you want to save  `^o` which is Control + o to write out or ctrl + s. 
 Now you can exit by `^x` Control + X. 
 
-We can practice coping, renaming and moving "test.txt" file
-`
-#### 5.1. Link for a useful Nano Keyboard Commands
+#### 5.2. Coping, renaming, and moving the "test.txt" file
+
+``` cp test.txt test_backup.txt ```
+
+``` cp text.txt ../``` copy the file to the upper directory (scratch)
+
+``` mv ../test.txt  ``` what do you think is happening here?
+
+Where is the text.txt file? 
+
+
+#### 5.3. Link for a useful Nano Keyboard Commands
 https://staffwww.fullcoll.edu/sedwards/Nano/UsefulNanoKeyCommands.html
 
-#### 5.2. Useful Vim tutorial for advance powerfull option 
+#### 5.4. Useful Vim tutorial for advance powerfull option 
 https://www.openvim.com/
 
 ### 6. Slurm introduction
@@ -295,20 +306,17 @@ Slurm is an open-source, fault-tolerant, and highly scalable cluster management 
 | `scontrol update job <Job ID>` | Job update |
 | `scontrol show job <Job ID>` | Job details |
 
-#### 6.2. Altering batch job
-**It will only alter until the job starts running**
 
-`scontrol update JobID=jobid NumTasks=Total_tasks JobName=any_new_name TimeLimit=day-hh:mm:ss`
-There are two type of jobs interactivea (batch or non-batch) and non-interactive (batch)
+**There are two types of jobs interactive and non-interactive**
 #### 6.3. Interactive job
 
-##### 6.3.1. non-batch 
+##### 6.3.1 salloc
 You will have keep the termail a live until the allocation of resources completed 
 
 
 `salloc --nodes=1 --ntasks=1 --time=00:10:00 --partition=campus`
 
-##### 6.3.2. batch
+##### 6.3.2. srun
 
 You will have to wait for the allocation of resources 
 
@@ -330,7 +338,7 @@ ilm0837
 
 #### 6.4. Non-interactive job
 
-##### 6.4.1. Batch
+##### 6.4.1 Batch
 
 An example of the batch job file should look like.
 ```
@@ -355,8 +363,13 @@ An example of the batch job file should look like.
  module load example/test
 
 ```
+#### 6.4.2 Altering batch job
+**It will only alter until the job starts running**
 
-##### 6.4.2. Debugging option 
+`scontrol update JobID=jobid NumTasks=Total_tasks JobName=any_new_name TimeLimit=day-hh:mm:ss`
+
+
+##### 6.4.3. Debugging option 
 you can go for an interactive job explained below or use the flag 
  
  	'#SBATCH -p=short'  
@@ -395,7 +408,7 @@ you can also
 ```
 sprio -lS '-Y' -u <username>
 ```
-
+--------------------------------------------------------------
 ### 6.7. Sbatch job
 In this tutorial, we will do some text manipulation. there are 4 FASTQ files available to use. Let's explore the files first.
 1) let's list the files.
