@@ -261,10 +261,6 @@ In your terminal type
 ``` nano test.txt ```
 This comand will invoke nano to open and creat a file called test.txt 
 
-<p align="center">
-<img width="548" alt="Screen Shot 2024-03-28 at 6 44 44 PM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/15bd8b00-7fa9-4aa4-b31b-8ffdcde4c2ae">
-</p>
-
 We will go over the nano interphase and different features
 
 After open nano and creat a file called test.txt  then type `I am learning new skills`. if you want to save  `^O` which is Control + O to write out. 
@@ -280,9 +276,6 @@ https://www.openvim.com/
 Slurm is an open-source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. 
 `slurmctld`, to monitor resources and work. Each compute server (node) `slurmd daemon` [fault-tolerant hierarchical communications]; can be compared to a remote shell: it waits for work, executes that work, returns status, and waits for more work `slurmdbd` (Slurm DataBase Daemon) which can be used to record accounting information for multiple Slurm-managed clusters in a single database.
 
-<p align="center">
-<img width="548" alt="Screen Shot 2024-03-26 at 12 51 01 PM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/909f844f-f08e-4bd5-8fe3-3c8314007b09">
-</p>
 
 #### 6.1. Slurm commands
 | Command | Description |
@@ -356,10 +349,6 @@ An example of the batch job file should look like.
  module load example/test
 
 ```
-<p align="center">
-<img width="891" alt="Screen Shot 2024-03-27 at 11 25 54 AM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/e4d330ef-a0f6-41be-acb1-e2088017a4ea">
-<img width="835" alt="Screen Shot 2024-03-28 at 12 20 09 PM" src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/e0aeeabf-0036-4985-b9b5-99a6e05e3056">
-</p>
 
 ##### 6.4.2. Debugging option 
 you can go for an interactive job explained below or use the flag 
@@ -367,13 +356,8 @@ you can go for an interactive job explained below or use the flag
  	'#SBATCH -p=short'  
   The short partition has a max of 3 hours and a total available resources 48 cores.
 
-#### 6.5. Scheduler and notes or partition availability
+#### 6.5. Scheduler and nodes/partition availability
 You can check for partition availability by typing `showpartitions`
-
-
-<p align="center">
-<img width="891" alt="Screen Shot 2024-03-28 at 5 16 15 PM"  src="https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/assets/47094619/84500509-944b-4f00-a881-607c426728c0">
-</p>
 
 You can specify a specific partition of interest (I selected 'campus') 
 ```
@@ -382,9 +366,12 @@ showpartitions | grep campus
 
 ### 6.6. Job priority:
 Each Slurm job's priority is computed based on several factors such as:
-The job's age (how long it's been queueing).
-The job's QOS.
-The user's Fairshare
+
+- The job's age (how long it's been queueing).
+
+- The job's QOS (resource availability).
+
+- The user's Fairshare (user's usage "resources promised and consumed").
 
 To view the factors that comprise a job's scheduling priority use `Sprio`
 This code will display the priority and other factros including users and accounts with a decending order
