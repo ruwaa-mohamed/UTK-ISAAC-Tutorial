@@ -1,6 +1,6 @@
 ## Before you come
 ### 1. Have you filled in the [pre-class survey](https://docs.google.com/forms/d/e/1FAIpQLSe7RZQYl7pppgfshM4Hf9he2mEwyWfIu5Zc5jr7_lU74ioZjg/viewform)
-
+### 1.1 This is the link for this tutorial in Github https://github.com/ruwaa-mohamed/UTK-ISAAC-Tutorial/blob/main/README.md
 ### 2. Request an ISAAC account 
 
 2.1. go to [https://oit.utk.edu/hpsc/](https://oit.utk.edu/hpsc/)
