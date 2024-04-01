@@ -251,21 +251,27 @@ This will create a directory for the repository called "UTK-ISAAC-Tutorial" with
 If you want to learn more about using GitHub, you can check out this tutorial on [GitHub Basics](https://docs.github.com/en/get-started/start-your-journey/hello-world).
 
 ### 5. File editing nano
-Why we can't use microsoft word or other text editing tools
-Lets start with creating a txt file named test.txt in your scratch 
-note; there is two ways to creat a folder in your scratch  via absolute path or you `cd` their. 
+Why we can't use Microsoft Word or other text editing tools?
+
+Let's start with creating a Text file named test.txt in your scratch directory
+note; there are two ways to create a folder in your scratch via absolute path or you `cd` there. 
 
 ` /lustre/isaac/scratch/<your_username> `
 
 In your terminal type 
+```mkdir nano_files```
 ``` nano test.txt ```
-This comand will invoke nano to open and creat a file called test.txt 
+This command will invoke nano to open and create a file called test.txt 
 
-We will go over the nano interphase and different features
+You can get familiar with nano interphase and different features.
 
-After open nano and creat a file called test.txt  then type `I am learning new skills`. if you want to save  `^O` which is Control + O to write out. 
-Now you can exit by `^E` Control + X. 
+After opening nano and creating a file called test.txt  let's type `I am learning new skills`. 
 
+If you want to save  `^o` which is Control + o to write out or ctrl + s. 
+Now you can exit by `^x` Control + X. 
+
+We can practice coping, renaming and moving "test.txt" file
+`
 #### 5.1. Link for a useful Nano Keyboard Commands
 https://staffwww.fullcoll.edu/sedwards/Nano/UsefulNanoKeyCommands.html
 
