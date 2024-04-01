@@ -276,7 +276,7 @@ Now you can exit by `^x` Control + X.
 
 ``` cp test.txt test_backup.txt ```
 
-``` cp text.txt ../``` copy the file to the upper directory (scratch)
+``` cp text.txt ../``` copy the file to the parent (upper) directory (scratch)
 
 ``` mv ../test.txt  ``` what do you think is happening here?
 
