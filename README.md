@@ -351,7 +351,7 @@ An example of the batch job file should look like.
  #SBATCH -account (or -A) ACF-UTK0011     # The project account to be charged
  #SBATCH --time (or -t)=hh:mm:ss          # Wall time (days-hh:mm:ss)
  #SBATCH --nodes (or -N)=1                # Number of nodes
- #SBATCH --ntasks (or -n)= 48.            # Total number of cores requested
+ #SBATCH --ntasks (or -n)= 48             # Total number of cores requested
  #SBATCH --ntasks-per-node=48             # cpus per node 
  #SBATCH --partition(or -p)=campus        # If not specified then default is "campus"
  #SBATCH --qos=campus		                   # quality of Service (QOS)
